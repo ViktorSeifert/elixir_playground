@@ -1,18 +1,16 @@
 defmodule StackServer do
+  use GenServer
   @moduledoc """
   Documentation for StackServer.
   """
 
-  @doc """
-  Hello world.
+  @impl true
+  def init(initial_stack_contents) do
+    { :ok, initial_stack_contents }
+  end
 
-  ## Examples
-
-      iex> StackServer.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  @impl true
+  def handle_call(:pop, _from, [ head | tail ]) do
+    { :reply, head, tail }
   end
 end
