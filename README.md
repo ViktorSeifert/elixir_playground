@@ -1,1 +1,3 @@
-# elixir_playground
+# My elixir playground
+
+Just some bits and pieces in Elixir
