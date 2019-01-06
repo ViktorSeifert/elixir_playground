@@ -10,7 +10,12 @@ defmodule StackServer do
   end
 
   @impl true
-  def handle_call(:pop, _from, [ head | tail ]) do
+  def handle_call(:pop, _from, _stack = [ head | tail ]) do
     { :reply, head, tail }
+  end
+
+  @impl true
+  def handle_cast({ :push, element }, stack) do
+    { :noreply, [ element | stack ] }
   end
 end
