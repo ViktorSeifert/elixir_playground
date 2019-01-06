@@ -2,7 +2,8 @@ defmodule StackServer do
   use GenServer
 
   @moduledoc """
-  Documentation for StackServer.
+  An example of a GenServer.
+  It acts as a stack
   """
 
   @impl true
